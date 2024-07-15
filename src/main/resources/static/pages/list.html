@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <titulo>TMDB API Website</titulo>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../public/style.css">
+  <link rel="icon" href="../public/favicon.svg" type="image/svg+xml">
+</head>
+<body>
+
+<!-- Header -->
+<nav class="navbar navbar-expand-lg navbar-light sticky-top mt-0 mb-4" style="background-color: #E89B26;">
+  <a class="navbar-brand" href="../index.html">TMDB API   <img src="../public/favicon.svg" alt="Logo"></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+    <ul class="navbar-nav ">
+      <li class="nav-item">
+        <a href="./newItem.html"> <button class="btn btn-other" type="button" id="login-button">Agregar Series</button></a> 
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/index.html">Tendencias</a>
+      </li>
+     
+    </ul>
+  </div>
+</nav>
+
+<!-- Sections 1-->
+<div class="container-fluid ">
+ <section>
+  <div class=" w-100  m-3 p-3 mb-5 align-content-center ">
+ 
+<h2 class="first-section">Mis Series</h2>
+  </div>
+  </section>
+ 
+  <!-- Grid Section -->
+  <section id="grid-section">
+    <div class="row animGrid" id="grid-cards">
+      <!-- Cards  -->
+    </div>
+  </section>
+
+        <!-- Scroller Button -->
+        <div id="scrollToTopButtonContainer"> 
+          <link rel="icon" href="../public/scrollUp.svg" type="image/svg+xml">
+        </div>
+
+
+
+</div>
+<script src="../js/showList.js"></script>
+<script src="../js/scroller.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
