@@ -29,26 +29,26 @@ El front-end está desarrollado con HTML, CSS/Bootstrap y JavaScript, mientras q
 
 Se inicializa en http://localhost:8080/ y tiene los siguientes endpoints:
 
-Lista de Series:
-URL: /listSeries
-Método HTTP: GET
-Descripción: Obtiene una lista de todas las series.
+<br>Lista de Series:
+<br>URL: /listSeries
+<br>Método HTTP: GET
+<br>Descripción: Obtiene una lista de todas las series.
 
-Agregar Serie:
-URL: /addSerie
-Método HTTP: POST
-Descripción: Añade una nueva serie.
+<br>Agregar Serie:
+<br>URL: /addSerie
+<br>Método HTTP: POST
+<br>Descripción: Añade una nueva serie.
 
 
-Eliminar Serie:
-URL: /delSerie/{id}
-Método HTTP: DELETE
-Descripción: Elimina una serie por su ID.
+<br>Eliminar Serie:
+<br>URL: /delSerie/{id}
+<br>Método HTTP: DELETE
+<br>Descripción: Elimina una serie por su ID.
 
-Actualizar Serie:
-URL: /updateSerie/{id}
-Método HTTP: PUT
-Descripción: Actualiza los detalles de una serie existente por su ID.
+<br>Actualizar Serie:
+<br>URL: /updateSerie/{id}
+<br>Método HTTP: PUT
+<br>Descripción: Actualiza los detalles de una serie existente por su ID.
 
 
 ---
