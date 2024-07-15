@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.example.demo.db.ConnectorDB;
-import com.example.demo.model.Pelicula;
+import com.example.demo.model.Serie;
 
 
 
@@ -17,9 +17,9 @@ import com.example.demo.model.Pelicula;
  * Consultas, insert, upd, y del
  * 
  */
-public class PeliculaDAO {
+public class SerieDAO {
  
-    public List<Pelicula> listar() {
+    public List<Serie> listar() {
         try {
             
             Statement st=ConnectorDB.getSt();
@@ -27,14 +27,14 @@ public class PeliculaDAO {
             
             // recorro todas las filas
             // crea un objeto fila
-            List<Pelicula> listPeli=new ArrayList<Pelicula>();
+            List<Serie> listShow=new ArrayList<Serie>();
             while (rs.next()) {
                 // orm: mapeo relacional objeto con hibernate, jpa
-                Pelicula peli=new Pelicula(rs.getInt("id"), rs.getString("titulo"), rs.getDate("anio"), rs.getDouble("puntuacion"), rs.getString("portada"), rs.getString("review"));
-                listPeli.add(peli);
+                Serie show=new Serie(rs.getInt("id"), rs.getString("titulo"), rs.getDate("anio"), rs.getDouble("puntuacion"), rs.getString("portada"), rs.getString("review"));
+                listShow.add(show);
             }         
             
-            return listPeli;
+            return listShow;
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -44,10 +44,10 @@ public class PeliculaDAO {
         
     }
 
-    public Boolean add(Pelicula peli) {
+    public Boolean add(Serie show) {
         try {
             Statement st=ConnectorDB.getSt();
-            Integer cantInsert=st.executeUpdate("INSERT INTO series (titulo, puntuacion, portada, review) VALUES ('"+peli.gettitulo()+"', "+peli.getPuntuacion()+", '"+peli.getPortada()+"', '"+peli.getReview()+"')");
+            Integer cantInsert=st.executeUpdate("INSERT INTO series (titulo, puntuacion, portada, review) VALUES ('"+show.gettitulo()+"', "+show.getPuntuacion()+", '"+show.getPortada()+"', '"+show.getReview()+"')");
             
             Boolean insertOk=(cantInsert==1);
 
@@ -59,10 +59,10 @@ public class PeliculaDAO {
         return false;
     }
 
-    public Boolean del(Pelicula peli) {
+    public Boolean del(Serie show) {
         try {
             Statement st=ConnectorDB.getSt();
-            Integer cantDel=st.executeUpdate("DELETE FROM series WHERE id="+peli.getId());
+            Integer cantDel=st.executeUpdate("DELETE FROM series WHERE id="+show.getId());
             
             Boolean delOk=(cantDel==1);
 
@@ -74,15 +74,15 @@ public class PeliculaDAO {
         return false;
     }
 
-    public Boolean update(Pelicula peli) {
+    public Boolean update(Serie show) {
         try {
             Statement st = ConnectorDB.getSt();
             Integer cantUpdate = st.executeUpdate(
-            "UPDATE series SET titulo='" + peli.gettitulo() + 
-            "', puntuacion=" + peli.getPuntuacion() + 
-            ", portada='" + peli.getPortada() + 
-            "', review='" + peli.getReview() + 
-            "' WHERE id=" + peli.getId()
+            "UPDATE series SET titulo='" + show.gettitulo() + 
+            "', puntuacion=" + show.getPuntuacion() + 
+            ", portada='" + show.getPortada() + 
+            "', review='" + show.getReview() + 
+            "' WHERE id=" + show.getId()
         );
 
             Boolean updateOk = (cantUpdate == 1);

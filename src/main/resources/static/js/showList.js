@@ -1,9 +1,9 @@
-const url = "http://localhost:8080/listarPeliculas";
+const url = "http://localhost:8080/listarSeries";
 
 //gets saved elements  from db and shows them in cards
 
 // Fetch data from API
-async function getPelis(url) {
+async function getShows(url) {
   try {
     const response = await fetch(url);
     const data = await response.json();
@@ -16,9 +16,9 @@ async function getPelis(url) {
 }
 
 // Grid cards
-async function renderPelis() {
+async function renderShows() {
   const gridSection = document.getElementById('grid-cards');
-  const results = await getPelis(url);
+  const results = await getShows(url);
 
   if (results && Array.isArray(results)) {
     gridSection.innerHTML = results.map(result => `
@@ -26,7 +26,7 @@ async function renderPelis() {
         <img src="${result.portada || 'placeholder.jpg'}" class="card-img-top img-fluid img-thumbnail rounded fade-in-center" alt="${result.name}">
         <div class="card-body">
           <div class="image-container">
-            <button class="garbage-can" onclick="delPeli(${result.id})">
+            <button class="garbage-can" onclick="delShow(${result.id})">
               <img src="../public/rubbish-bin.svg" alt="Delete" />
               <span class="tooltip">Borrar</span>  
             </button> 
@@ -35,7 +35,7 @@ async function renderPelis() {
           <input type="text" class="form-control mb-2" id="puntuacion-${result.id}" value="${result.puntuacion || ''}">
           <input type="hidden" class="form-control mb-2" id="portada-${result.id}" value="${result.portada || ''}">
           <input type="text" class="form-control mb-2" id="review-${result.id}" value="${result.review || ''}">
-          <button class="btn btn-other" onclick="savePeli(${result.id})">Guardar cambios</button>
+          <button class="btn btn-other" onclick="saveShow(${result.id})">Guardar cambios</button>
         </div>
       </div>
     `).join('');
@@ -45,9 +45,9 @@ async function renderPelis() {
 }
 
 
-async function delPeli(id) {
+async function delShow(id) {
   try {
-     await fetch(`http://localhost:8080/delPelicula/${id}`, {
+     await fetch(`http://localhost:8080/delSerie/${id}`, {
       method: 'DELETE',
     });
     okDel();
@@ -65,7 +65,7 @@ function dibujarError(error) {
   document.querySelector('#grid-cards').innerHTML = `Error: ${error}`;
 }
 
-async function savePeli(id) {
+async function saveShow(id) {
   const card = document.getElementById(`card-${id}`);
   const storedPortada = card.getAttribute('data-portada');
 
@@ -74,7 +74,7 @@ async function savePeli(id) {
   const portada = document.getElementById(`portada-${id}`).value || storedPortada;
   const review = document.getElementById(`review-${id}`).value;
 
-  const peliculaData = {
+  const serieData = {
     titulo: titulo,
     puntuacion: puntuacion,
     portada: portada,
@@ -82,18 +82,18 @@ async function savePeli(id) {
   };
 
   try {
-    const response = await fetch(`http://localhost:8080/updatePelicula/${id}`, {
+    const response = await fetch(`http://localhost:8080/updateSerie/${id}`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify(peliculaData)
+      body: JSON.stringify(serieData)
     });
     if (response.ok) {
-      alert('Pelicula actualizada exitosamente');
-      renderPelis(); // Refresh the list
+      alert('Serie actualizada exitosamente');
+      renderShows(); // Refresh the list
     } else {
-      alert('Error al actualizar la pelicula');
+      alert('Error al actualizar la serie');
     }
   } catch (error) {
     console.error('Error:', error);
@@ -104,4 +104,4 @@ async function savePeli(id) {
 
 
 // Call functions
-renderPelis();
+renderShows();

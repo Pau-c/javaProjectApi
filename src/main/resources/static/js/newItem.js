@@ -1,6 +1,6 @@
 
 
-document.getElementById('peliculaForm').addEventListener('submit', async function(event) {
+document.getElementById('serieForm').addEventListener('submit', async function(event) {
     event.preventDefault(); // Prevent the default form submission
 
     const nombre = document.getElementById('nombre').value;
@@ -8,7 +8,7 @@ document.getElementById('peliculaForm').addEventListener('submit', async functio
     const portada = document.getElementById('portada').value;
     const review = document.getElementById('review').value;
 
-    const peliculaData = {
+    const serieData = {
         titulo: nombre,
         puntuacion: puntuacion,
         portada: portada,
@@ -16,12 +16,12 @@ document.getElementById('peliculaForm').addEventListener('submit', async functio
     };
 
     try {
-        const response = await fetch('http://localhost:8080/addPelicula', {
+        const response = await fetch('http://localhost:8080/addSerie', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify(peliculaData)
+            body: JSON.stringify(serieData)
         });
 
         if (response.ok) {

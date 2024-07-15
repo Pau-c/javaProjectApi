@@ -5,7 +5,7 @@ import java.util.Date;
 /**
  * Objeto que representa un fila de la tabla 
  */
-public class Pelicula {
+public class Serie {
     private Integer id;
     private String titulo;
     private Date anio;
@@ -13,7 +13,7 @@ public class Pelicula {
     private String portada;
     private String review;
     
-    public Pelicula(Integer id, String titulo, Date anio, Double puntuacion, String portada, String review) {
+    public Serie(Integer id, String titulo, Date anio, Double puntuacion, String portada, String review) {
         this.id = id;
         this.titulo = titulo;
         this.anio = anio;
@@ -22,7 +22,7 @@ public class Pelicula {
         this.review = review;
     }
 //for update method
-    public Pelicula(Integer id, String titulo, Double puntuacion, String portada, String review) {
+    public Serie(Integer id, String titulo, Double puntuacion, String portada, String review) {
         this.id = id;
         this.titulo = titulo;
         this.puntuacion = puntuacion;
@@ -37,7 +37,7 @@ public class Pelicula {
      * @param portada
      * @param review
      */
-    public Pelicula(String titulo, Double puntuacion, String portada, String review) {
+    public Serie(String titulo, Double puntuacion, String portada, String review) {
         this.titulo = titulo;
         this.puntuacion = puntuacion;
         this.portada = portada;
@@ -46,7 +46,7 @@ public class Pelicula {
 
 
 
-    public Pelicula(Integer id) {
+    public Serie(Integer id) {
         this.id = id;
     }
 

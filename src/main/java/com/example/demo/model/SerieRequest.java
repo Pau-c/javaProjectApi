@@ -1,6 +1,6 @@
 package com.example.demo.model;
 
-public class PeliculaRequest {
+public class SerieRequest {
     private String titulo;
     private Double puntuacion;
     private String portada;
