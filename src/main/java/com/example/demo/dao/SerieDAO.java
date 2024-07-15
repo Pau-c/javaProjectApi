@@ -19,7 +19,7 @@ import com.example.demo.model.Serie;
  */
 public class SerieDAO {
  
-    public List<Serie> listar() {
+    public List<Serie> list() {
         try {
             
             Statement st=ConnectorDB.getSt();

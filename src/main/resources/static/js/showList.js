@@ -1,4 +1,4 @@
-const url = "http://localhost:8080/listarSeries";
+const url = "http://localhost:8080/listSeries";
 
 //gets saved elements  from db and shows them in cards
 

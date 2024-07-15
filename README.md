@@ -23,6 +23,33 @@ La aplicacion utiliza la API TMDB para mostrar las series mas populares, ademas:
 - Permite guardar una serie con su nombre, rating del usuario y una reseña
 - Permite visualizar una lista con las series guardadas y modificar o borrar sus datos.
 
+Es un proyecto CRUD local que utiliza el patrón MVC, desacoplando la interfaz de usuario (vista), los datos (modelo) y la lógica de la aplicación (controlador).
+
+El front-end está desarrollado con HTML, CSS/Bootstrap y JavaScript, mientras que el back-end está construido con Java, utilizando el framework Spring Boot y MySQL como base de datos.
+
+Se inicializa en http://localhost:8080/ y tiene los siguientes endpoints:
+
+Lista de Series:
+URL: /listSeries
+Método HTTP: GET
+Descripción: Obtiene una lista de todas las series.
+
+Agregar Serie:
+URL: /addSerie
+Método HTTP: POST
+Descripción: Añade una nueva serie.
+
+
+Eliminar Serie:
+URL: /delSerie/{id}
+Método HTTP: DELETE
+Descripción: Elimina una serie por su ID.
+
+Actualizar Serie:
+URL: /updateSerie/{id}
+Método HTTP: PUT
+Descripción: Actualiza los detalles de una serie existente por su ID.
+
 
 ---
 

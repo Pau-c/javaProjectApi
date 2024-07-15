@@ -19,11 +19,11 @@ import com.example.demo.model.SerieRequest;
 public class SerieController {
 
     @CrossOrigin(origins = "*")
-    @GetMapping("/listarSeries")
-    public List<Serie> listarSeries() {
+    @GetMapping("/listSeries")
+    public List<Serie> listSeries() {
         SerieDAO serieDAO=new SerieDAO();
         System.out.println(serieDAO);
-        return serieDAO.listar();
+        return serieDAO.list();
     }
     
  
