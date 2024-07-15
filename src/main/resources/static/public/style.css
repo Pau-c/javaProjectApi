@@ -1,0 +1,242 @@
+/* Custom CSS */
+body {
+    padding-top: 56px; 
+    background-color:#1d5d80;
+  }
+  .sticky-top {
+    top: 0;
+    z-index: 1020;
+
+    
+  }
+
+  .btn{
+  font-weight: normal;
+  }
+
+  .btn-search{
+    background-color: #E89B26;
+    }
+
+
+.btn-other{
+  background-color: #1d5d80;
+  color: white; 
+
+}
+
+.btn-other:hover{
+  background-color: #396d89;
+  color: rgb(255, 255, 255);
+
+}
+
+  .search-section {
+    padding: 20px;
+  }
+  .card {
+    width: calc(33.33% - 50px); /* 3 columns with 20px margin between */
+    margin: 10px;
+    /* border:none; */
+  }
+  .card-img-top {
+    height: auto;
+    width: 100%;
+
+
+  }
+
+  input, select, textarea, .form-control, .form-select, .form-check-inputt{
+border-radius: 1em;
+border-color: #E89B26 !important;
+border-width: 5px;
+  }
+
+.invalid-feedback{
+background-color: #E89B26 !important;
+font-weight: bolder;
+width: fit-content;
+  }
+
+.first-section{
+
+    height: 100%;
+    width: 100%;
+    margin: 0%;
+    padding: 1%;
+    /* background-image: url("./bg2.jpg"); */
+    background-color: #E89B26;
+ 
+    width: fit-content;
+    font-weight: bolder;
+    color:white;
+}
+
+
+h1{
+
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-style: bold;
+  font-size: 5rem;
+  
+}
+h2{
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+font-size: 4rem;
+
+}
+
+
+h5, .navbar, footer{
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: 100;
+  font-style: normal;
+}
+
+.footer-text{
+  color: rgb(81, 58, 31) !important;
+}
+.footer-text:hover{
+  color: rgb(0, 0, 0) !important;
+}
+
+
+  @media (max-width: 768px) {
+    .card {
+      width: calc(50% - 20px); /* 2 columns with 20px margin between */
+    }
+  }
+  @media (max-width: 576px) {
+    .search-section {
+      padding: 10px;
+    }
+    .card {
+      width: calc(100% - 20px); /* 1 column with 20px margin between */
+      border-radius: 10px;
+    }
+  }
+/* scroller button */
+  #scrollToTopButton {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #E89B26;
+    color: rgb(0, 0, 0);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+#scrollToTopButton img {
+  width: 24px;
+  height: 24px;
+}
+
+
+#scrollToTopButton:hover {
+    background-color: #d9821c;
+}
+
+.garbage-can {
+ border-color: none;
+  display: inline-block;
+  text-align:right;
+  background: none; /* Remove background */
+  border: none; /* Remove border */
+  padding: 0; /* Remove padding */
+  cursor: pointer; /* Change cursor to pointer */
+}
+
+.garbage-can img {
+  width: 5%;
+  height: 5%;
+}
+
+
+.tooltip {
+  visibility: hidden;
+  width: 100px; /* Adjust the width of the tooltip */
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 100%; /* Position the tooltip above the image */
+  left: 50%;
+  margin-left: 5px; /* Adjust this value to center the tooltip */
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.image-container {
+  position: relative;
+  display: inline-block;
+}
+
+.image-container:hover .tooltip {
+  visibility: visible;
+  opacity: 1;
+}
+
+/*  css animations */
+/* main grid */
+  @keyframes myAnim {
+    0% {
+      opacity: 0;
+      transform: translateX(50px);
+    }
+  
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  .animGrid{
+  animation: myAnim 2s ease 0s 1 normal none;
+  
+}
+
+
+  /* search input */
+  @keyframes topAnim {
+    0% {
+      opacity: 0;
+      transform: translateY(-50px);
+    }
+  
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animFromTop{
+  animation: topAnim 2s ease 0s 1 normal none;
+ 
+}
+
+/* animation for individual cards toshow info on mouseover */
+@keyframes fade-center {
+	0% {
+		opacity: 1;
+	}
+
+	100% {
+		opacity: 1;
+	}
+}
+
+.fade-in-center {
+	opacity: 0.8; /* Start with opacity 0 */
+	transition: opacity 1s ease; /* Define transition */
+}
+
+.fade-in-center:hover {
+	animation: fade-center 2s ease; /* Apply animation on hover */
+}
