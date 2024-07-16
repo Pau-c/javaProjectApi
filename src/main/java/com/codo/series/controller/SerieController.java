@@ -1,4 +1,4 @@
-package com.example.demo;
+package com.codo.series.controller;
 
 import java.util.List;
 
@@ -11,9 +11,9 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.demo.dao.SerieDAO;
-import com.example.demo.model.Serie;
-import com.example.demo.model.SerieRequest;
+import com.codo.series.dao.SerieDAO;
+import com.codo.series.model.Serie;
+import com.codo.series.model.SerieRequest;
 
 @RestController
 public class SerieController {
@@ -31,7 +31,7 @@ public class SerieController {
     @CrossOrigin(origins = "*")
     @PostMapping("/addSerie")
     public void addSerie(@RequestBody SerieRequest serieRequest) {
-        Serie show = new Serie(serieRequest.gettitulo(), 
+        Serie show = new Serie(serieRequest.getTitulo(), 
                                      Double.valueOf(serieRequest.getPuntuacion()), 
                                      serieRequest.getPortada(), serieRequest.getReview());
 
@@ -53,7 +53,7 @@ public class SerieController {
      @CrossOrigin(origins = "*")
     @PutMapping("/updateSerie/{id}")
     public void updateSerie(@PathVariable("id") Integer id, @RequestBody SerieRequest serieRequest) {
-        Serie show = new Serie(id, serieRequest.gettitulo(),
+        Serie show = new Serie(id, serieRequest.getTitulo(),
                                      Double.valueOf(serieRequest.getPuntuacion()),
                                      serieRequest.getPortada(),
                                      serieRequest.getReview() );

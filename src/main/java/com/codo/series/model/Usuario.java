@@ -1,4 +1,4 @@
-package com.example.demo.model;
+package com.codo.series.model;
 
 public class Usuario {
     private Integer id;

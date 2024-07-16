@@ -1,10 +1,10 @@
-package com.example.demo.model;
+package com.codo.series.model;
 
 import java.util.Date;
 
-/**
- * Objeto que representa un fila de la tabla 
- */
+
+ //Objeto que representa un fila de la tabla 
+ 
 public class Serie {
     private Integer id;
     private String titulo;
@@ -31,7 +31,7 @@ public class Serie {
     }
     
     /**
-     * Constructor que solo recibe 4 parámetros
+     * Constructor 4 parámetros
      * @param titulo
      * @param puntuacion
      * @param portada
@@ -59,11 +59,11 @@ public class Serie {
         this.id = id;
     }
 
-    public String gettitulo() {
+    public String getTitulo() {
         return titulo;
     }
 
-    public void settitulo(String titulo) {
+    public void setTitulo(String titulo) {
         this.titulo = titulo;
     }
 

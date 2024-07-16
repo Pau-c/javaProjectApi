@@ -1,4 +1,4 @@
-package com.example.demo.model;
+package com.codo.series.model;
 
 public class SerieRequest {
     private String titulo;
@@ -7,11 +7,11 @@ public class SerieRequest {
     private String review;
 
     // Getters and Setters
-    public String gettitulo() {
+    public String getTitulo() {
         return titulo;
     }
 
-    public void settitulo(String titulo) {
+    public void setTitulo(String titulo) {
         this.titulo = titulo;
     }
 
